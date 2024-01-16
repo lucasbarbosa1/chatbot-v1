@@ -1,18 +1,11 @@
-This is a [LlamaIndex](https://www.llamaindex.ai/) project bootstrapped with [`create-llama`](https://github.com/run-llama/LlamaIndexTS/tree/main/packages/create-llama).
+Projeto Chatbot UFOP implementado por Lucas Barbosa para a Monografia do curso de Ciência de Computação pela Universidade Federal de Ouro Preto - Campus Morro do Cruzeiro.
 
-## Getting Started
+O Projeto utiliza o [LlamaIndex](https://www.llamaindex.ai/) 
 
-First, startup the backend as described in the [backend README](./backend/README.md).
+## Primeiros passos
 
-Second, run the development server of the frontend as described in the [frontend README](./frontend/README.md).
+Primeiro, inicialize o back-end conforme descrito no [README de back-end](./backend/README.md).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Em segundo lugar, execute o servidor de desenvolvimento do front-end conforme descrito no [README frontend](./frontend/README.md).
 
-## Learn More
-
-To learn more about LlamaIndex, take a look at the following resources:
-
-- [LlamaIndex Documentation](https://docs.llamaindex.ai) - learn about LlamaIndex (Python features).
-- [LlamaIndexTS Documentation](https://ts.llamaindex.ai) - learn about LlamaIndex (Typescript features).
-
-You can check out [the LlamaIndexTS GitHub repository](https://github.com/run-llama/LlamaIndexTS) - your feedback and contributions are welcome!
+Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado.

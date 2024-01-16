@@ -6,21 +6,8 @@ import { LlamaIndexStream } from "./llamaindex-stream";
 
 const getLastMessageContent = (
   textMessage: string,
-  imageUrl: string | undefined,
 ): MessageContent => {
-  if (!imageUrl) return textMessage;
-  return [
-    {
-      type: "text",
-      text: textMessage,
-    },
-    {
-      type: "image_url",
-      image_url: {
-        url: imageUrl,
-      },
-    },
-  ];
+  return textMessage;
 };
 
 export const chat = async (req: Request, res: Response) => {
@@ -30,19 +17,18 @@ export const chat = async (req: Request, res: Response) => {
     if (!messages || !lastMessage || lastMessage.role !== "user") {
       return res.status(400).json({
         error:
-          "messages are required in the request body and the last message must be from the user",
+          "As mensagens são necessárias no body da requisição e a última mensagem deve ser do usuário",
       });
     }
 
     const llm = new OpenAI({
-      model: process.env.MODEL || "gpt-3.5-turbo",
+      model: process.env.MODEL,
     });
 
     const chatEngine = await createChatEngine(llm);
 
     const lastMessageContent = getLastMessageContent(
       lastMessage.content,
-      data?.imageUrl,
     );
 
     const response = await chatEngine.chat(
@@ -51,7 +37,7 @@ export const chat = async (req: Request, res: Response) => {
       true,
     );
 
-    // Transform the response into a readable stream
+    // Transforma a resposta em texto legível.
     const stream = LlamaIndexStream(response);
 
     streamToResponse(stream, res);
