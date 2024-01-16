@@ -31,7 +31,7 @@ if (isDevelopment) {
 app.use(express.text());
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("LlamaIndex Express Server");
+  res.send("Ufop-chatbot Server");
 });
 
 app.use("/api/chat", chatRouter);

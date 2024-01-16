@@ -1,15 +1,15 @@
 "use client";
 
 export interface ChatInputProps {
-  /** The current value of the input */
+  /** Valor atual da entrada */
   input?: string;
-  /** An input/textarea-ready onChange handler to control the value of the input */
+  /** Controlar o valor da entrada. */
   handleInputChange?: (
     e:
       | React.ChangeEvent<HTMLInputElement>
       | React.ChangeEvent<HTMLTextAreaElement>,
   ) => void;
-  /** Form submission handler to automatically reset input and append a user message  */
+  /**Resetar o texto da entrada automaticamente */
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
   isLoading: boolean;
   multiModal?: boolean;
@@ -20,22 +20,22 @@ export default function ChatInput(props: ChatInputProps) {
     <>
       <form
         onSubmit={props.handleSubmit}
-        className="flex items-start justify-between w-full max-w-5xl p-4 bg-white rounded-xl shadow-xl gap-4"
+        className="flex items-start justify-between w-full max-w-5xl p-4 bg-red-700 rounded-xl shadow-xl gap-4"
       >
-        <input
-          autoFocus
-          name="message"
-          placeholder="Type a message"
-          className="w-full p-4 rounded-xl shadow-inner flex-1"
-          value={props.input}
-          onChange={props.handleInputChange}
-        />
+      <input
+        autoFocus
+        name="message"
+        placeholder="Digite aqui sua dúvida sobre a UFOP"
+        className="w-full p-4 text-xl text-black bg-white rounded-xl shadow-inner flex-1"
+        value={props.input}
+        onChange={props.handleInputChange}
+      />
         <button
           disabled={props.isLoading}
           type="submit"
-          className="p-4 text-white rounded-xl shadow-xl bg-gradient-to-r from-cyan-500 to-sky-500 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="p-4 text-white text-xl rounded-xl shadow-xl bg-gradient-to-r from-red-800 to-orange-900 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          Send message
+          Enviar
         </button>
       </form>
     </>
